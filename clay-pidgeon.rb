@@ -2,11 +2,7 @@ def shoot(results_array)
     p1_score, p2_score = 0, 0
 
     results_array.each do |results|
-        if results[1]
-            multi = 2
-        else
-            multi = 1
-        end
+        results[1] ? multi = 2 : multi = 1
 
         results[0][:P1].scan(/X+/) { |x| p1_score += (x.length * multi) }
         results[0][:P2].scan(/X+/) { |x| p2_score += (x.length * multi) }
